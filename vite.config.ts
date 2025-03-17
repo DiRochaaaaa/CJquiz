@@ -11,6 +11,6 @@ export default defineConfig({
   },
   preview: {
     host: true, // Permite conexões externas no ambiente de produção
-    allowedHosts: "all", // 🔥 Permite acesso de qualquer domínio
+    allowedHosts: ["*"], // 🔥 Permite qualquer domínio acessar
   },
 });
