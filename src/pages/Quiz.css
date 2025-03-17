@@ -1,0 +1,65 @@
+.quiz-option {
+  transition: transform 0.2s ease-in-out;
+}
+
+.quiz-option:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-option:active {
+  transform: translateY(0);
+}
+
+.progress-bar {
+  transition: width 0.5s ease-in-out;
+}
+
+.proof-container {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animação de rotação para o spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1.5s linear infinite;
+}
+
+/* Animação de pulso para o texto de carregamento */
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.loading-container h2 {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/* Gradiente animado para o fundo */
+.bg-gradient-to-b {
+  background: linear-gradient(to bottom, #0066cc, #004080);
+  background-size: 200% 200%;
+  animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+} 
