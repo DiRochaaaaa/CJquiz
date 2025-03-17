@@ -9,8 +9,5 @@ export default defineConfig({
   server: {
     host: true, // Permite conexões externas no ambiente de desenvolvimento
   },
-  preview: {
-    host: true, // Permite conexões externas no ambiente de produção
-    allowedHosts: ["*"], // 🔥 Permite qualquer domínio acessar
-  },
+ 
 });
