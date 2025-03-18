@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import ParamLink from '../components/UtmLink';
+import useParamTracking from '../hooks/useUtmTracking';
 
 function Offer() {
   const location = useLocation();
@@ -9,6 +11,7 @@ function Offer() {
   const [minutes, setMinutes] = useState(32);
   const [seconds, setSeconds] = useState(14);
   const [buyerCount, setBuyerCount] = useState(16);
+  const { redirect, processUrl } = useParamTracking();
 
   // Links de pagamento da Kirvano
   const paymentLinks = {
@@ -61,8 +64,9 @@ function Offer() {
   };
 
   const handleGetPlan = () => {
-    // Redirecionar para o link de pagamento correspondente ao plano selecionado
-    window.location.href = paymentLinks[selectedPlan as keyof typeof paymentLinks];
+    // Redirecionar para o link de pagamento com todos os parâmetros de URL preservados
+    const paymentUrl = paymentLinks[selectedPlan as keyof typeof paymentLinks];
+    redirect(paymentUrl);
   };
 
   return (
@@ -231,11 +235,11 @@ function Offer() {
           
           {/* Garantia */}
           <div className="bg-white/90 backdrop-blur-md rounded-xl p-3 mb-4 shadow-sm border-2 border-[#00cc66] relative">
-            <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-[#00cc66] text-white px-3 py-0.5 rounded-full text-xs font-bold">
+            <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-[#00cc66] text-white px-3 py-0.5 rounded-full text-xs font-bold whitespace-nowrap">
               SATISFAÇÃO GARANTIDA
             </div>
-            <div className="pt-2 flex items-center">
-              <div className="text-4xl text-[#00cc66] mr-3">✓</div>
+            <div className="pt-4 sm:pt-2 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left">
+              <div className="text-4xl text-[#00cc66] mb-2 sm:mb-0 sm:mr-3">✓</div>
               <div>
                 <h3 className="font-bold text-[#0066cc] text-sm mb-1">Experimente sem risco por 30 dias!</h3>
                 <p className="text-xs text-gray-600">
@@ -400,8 +404,9 @@ function Offer() {
             </button>
             
             {/* Badge de pessoas comprando */}
-            <div className="absolute bottom-[-12px] left-1/2 transform -translate-x-1/2 bg-[#00cc66] text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md">
-              <span className="animate-pulse mr-1">●</span> {buyerCount} pessoas comprando agora
+            <div className="absolute bottom-[-12px] left-1/2 transform -translate-x-1/2 bg-[#00cc66] text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md whitespace-nowrap flex items-center justify-center">
+              <span className="animate-pulse mr-1 inline-block">●</span> 
+              <span>{buyerCount} pessoas comprando agora</span>
             </div>
           </div>
           
@@ -414,12 +419,12 @@ function Offer() {
             
             {/* Botão de teste grátis */}
             <div className="mt-8 mb-2">
-              <a 
-                href="/free-trial" 
+              <ParamLink 
+                to="/free-trial" 
                 className="text-[#0066cc] text-sm font-medium border border-[#0066cc]/30 px-4 py-2 rounded-full hover:bg-blue-50 transition-all inline-block"
               >
                 Ainda não tenho certeza se vou querer
-              </a>
+              </ParamLink>
             </div>
           </div>
         </div>
