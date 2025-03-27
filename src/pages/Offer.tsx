@@ -15,9 +15,9 @@ function Offer() {
 
   // Links de pagamento da Kirvano
   const paymentLinks = {
-    '7-day': 'https://pay.kirvano.com/0c89d0e8-4abd-4220-b569-4fa880ec5d17',
-    '1-month': 'https://pay.kirvano.com/86b17786-d39a-4362-aad9-1d37c8c42484',
-    '1-year': 'https://pay.kirvano.com/3f972ccc-7dd1-4a89-b321-cefbde609762'
+    '7-day': 'https://pay.cakto.com.br/324mgnd',
+    '1-month': 'https://pay.cakto.com.br/37cfofn_316127',
+    '1-year': 'https://pay.cakto.com.br/9aj8dbw'
   };
 
   useEffect(() => {
@@ -289,8 +289,8 @@ function Offer() {
               <div className="flex-1">
                 <div className="text-sm font-bold text-[#0066cc] uppercase">1 ANO</div>
                 <div className="text-xs text-gray-600">
-                  <span className="line-through bg-black/5 px-1 rounded mr-1">R$420</span>
-                  <span className="font-semibold text-[#0066cc]">R$197</span>
+                  <span className="line-through bg-black/5 px-1 rounded mr-1">R$ 444</span>
+                  <span className="font-semibold text-[#0066cc]">R$ 197</span>
                 </div>
               </div>
               
@@ -329,16 +329,16 @@ function Offer() {
               <div className="flex-1">
                 <div className="text-sm font-bold text-[#0066cc] uppercase">1 MÊS</div>
                 <div className="text-xs text-gray-600">
-                  <span className="line-through bg-black/5 px-1 rounded mr-1">R$35</span>
-                  <span className="font-semibold text-[#0066cc]">R$20</span>
+                  <span className="line-through bg-black/5 px-1 rounded mr-1">R$ 60</span>
+                  <span className="font-semibold text-[#0066cc]">R$ 37</span>
                 </div>
               </div>
               
               <div className="bg-blue-50 rounded-xl p-2 text-center min-w-[70px]">
                 <div className="flex items-start justify-center">
                   <span className="text-[10px] font-bold text-[#0066cc]">R$</span>
-                  <span className="text-xl font-bold text-[#0066cc] leading-none">0</span>
-                  <span className="text-[10px] font-bold text-[#0066cc]">67</span>
+                  <span className="text-xl font-bold text-[#0066cc] leading-none">1</span>
+                  <span className="text-[10px] font-bold text-[#0066cc]">23</span>
                 </div>
                 <div className="text-[10px] text-[#0066cc] font-semibold mt-0.5">por dia</div>
               </div>
@@ -367,16 +367,16 @@ function Offer() {
               <div className="flex-1">
                 <div className="text-sm font-bold text-[#0066cc] uppercase">7 DIAS</div>
                 <div className="text-xs text-gray-600">
-                  <span className="line-through bg-black/5 px-1 rounded mr-1">R$12</span>
-                  <span className="font-semibold text-[#0066cc]">R$7</span>
+                  {/* <span className="line-through bg-black/5 px-1 rounded mr-1">R$ 12</span> */}
+                  <span className="font-semibold text-[#0066cc]">R$ 15</span>
                 </div>
               </div>
               
               <div className="bg-blue-50 rounded-xl p-2 text-center min-w-[70px]">
                 <div className="flex items-start justify-center">
                   <span className="text-[10px] font-bold text-[#0066cc]">R$</span>
-                  <span className="text-xl font-bold text-[#0066cc] leading-none">1</span>
-                  <span className="text-[10px] font-bold text-[#0066cc]">00</span>
+                  <span className="text-xl font-bold text-[#0066cc] leading-none">2</span>
+                  <span className="text-[10px] font-bold text-[#0066cc]">14</span>
                 </div>
                 <div className="text-[10px] text-[#0066cc] font-semibold mt-0.5">por dia</div>
               </div>
