@@ -264,20 +264,22 @@ function Offer() {
               Escolha seu plano de conexão
             </h2>
             
-            {/* Plano 7 dias */}
+            {/* Plano 1 ano (mais barato) */}
             <div 
-              className={`relative rounded-xl mb-3 overflow-hidden cursor-pointer shadow-sm bg-white flex items-center p-4 border-2 ${selectedPlan === '7-day' ? 'border-[#0066cc]' : 'border-[#0066cc]/30'} hover:-translate-y-1 hover:shadow-md transition-all h-[72px]`}
-              onClick={() => handlePlanSelect('7-day')}
+              className={`relative rounded-xl mb-3 overflow-hidden cursor-pointer shadow-sm bg-white flex items-center p-4 pt-6 border-2 ${selectedPlan === '1-year' ? 'border-[#0066cc]' : 'border-[#ff6600]'} hover:-translate-y-1 hover:shadow-md transition-all h-[72px]`}
+              onClick={() => handlePlanSelect('1-year')}
             >
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-[#ff6600] text-white text-[10px] font-bold py-0.5 px-3 rounded-b-md shadow-sm">MAIS BARATO</div>
+              
               <div className="relative flex items-center justify-center mr-3">
                 <input 
                   type="radio" 
                   name="plan" 
                   className="appearance-none w-5 h-5 border-2 border-gray-300 rounded-full cursor-pointer checked:border-[#0066cc]"
-                  checked={selectedPlan === '7-day'}
-                  onChange={() => handlePlanSelect('7-day')}
+                  checked={selectedPlan === '1-year'}
+                  onChange={() => handlePlanSelect('1-year')}
                 />
-                {selectedPlan === '7-day' && (
+                {selectedPlan === '1-year' && (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-2.5 h-2.5 rounded-full bg-[#0066cc]"></div>
                   </div>
@@ -285,18 +287,18 @@ function Offer() {
               </div>
               
               <div className="flex-1">
-                <div className="text-sm font-bold text-[#0066cc] uppercase">7 DIAS</div>
+                <div className="text-sm font-bold text-[#0066cc] uppercase">1 ANO</div>
                 <div className="text-xs text-gray-600">
-                  <span className="line-through bg-black/5 px-1 rounded mr-1">R$12</span>
-                  <span className="font-semibold text-[#0066cc]">R$7</span>
+                  <span className="line-through bg-black/5 px-1 rounded mr-1">R$420</span>
+                  <span className="font-semibold text-[#0066cc]">R$197</span>
                 </div>
               </div>
               
               <div className="bg-blue-50 rounded-xl p-2 text-center min-w-[70px]">
                 <div className="flex items-start justify-center">
                   <span className="text-[10px] font-bold text-[#0066cc]">R$</span>
-                  <span className="text-xl font-bold text-[#0066cc] leading-none">1</span>
-                  <span className="text-[10px] font-bold text-[#0066cc]">00</span>
+                  <span className="text-xl font-bold text-[#0066cc] leading-none">0</span>
+                  <span className="text-[10px] font-bold text-[#0066cc]">54</span>
                 </div>
                 <div className="text-[10px] text-[#0066cc] font-semibold mt-0.5">por dia</div>
               </div>
@@ -342,22 +344,20 @@ function Offer() {
               </div>
             </div>
             
-            {/* Plano 1 ano (mais barato) */}
+            {/* Plano 7 dias */}
             <div 
-              className={`relative rounded-xl mb-3 overflow-hidden cursor-pointer shadow-sm bg-white flex items-center p-4 pt-6 border-2 ${selectedPlan === '1-year' ? 'border-[#0066cc]' : 'border-[#ff6600]'} hover:-translate-y-1 hover:shadow-md transition-all h-[72px]`}
-              onClick={() => handlePlanSelect('1-year')}
+              className={`relative rounded-xl mb-3 overflow-hidden cursor-pointer shadow-sm bg-white flex items-center p-4 border-2 ${selectedPlan === '7-day' ? 'border-[#0066cc]' : 'border-[#0066cc]/30'} hover:-translate-y-1 hover:shadow-md transition-all h-[72px]`}
+              onClick={() => handlePlanSelect('7-day')}
             >
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-[#ff6600] text-white text-[10px] font-bold py-0.5 px-3 rounded-b-md shadow-sm">MAIS BARATO</div>
-              
               <div className="relative flex items-center justify-center mr-3">
                 <input 
                   type="radio" 
                   name="plan" 
                   className="appearance-none w-5 h-5 border-2 border-gray-300 rounded-full cursor-pointer checked:border-[#0066cc]"
-                  checked={selectedPlan === '1-year'}
-                  onChange={() => handlePlanSelect('1-year')}
+                  checked={selectedPlan === '7-day'}
+                  onChange={() => handlePlanSelect('7-day')}
                 />
-                {selectedPlan === '1-year' && (
+                {selectedPlan === '7-day' && (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-2.5 h-2.5 rounded-full bg-[#0066cc]"></div>
                   </div>
@@ -365,18 +365,18 @@ function Offer() {
               </div>
               
               <div className="flex-1">
-                <div className="text-sm font-bold text-[#0066cc] uppercase">1 ANO</div>
+                <div className="text-sm font-bold text-[#0066cc] uppercase">7 DIAS</div>
                 <div className="text-xs text-gray-600">
-                  <span className="line-through bg-black/5 px-1 rounded mr-1">R$420</span>
-                  <span className="font-semibold text-[#0066cc]">R$197</span>
+                  <span className="line-through bg-black/5 px-1 rounded mr-1">R$12</span>
+                  <span className="font-semibold text-[#0066cc]">R$7</span>
                 </div>
               </div>
               
               <div className="bg-blue-50 rounded-xl p-2 text-center min-w-[70px]">
                 <div className="flex items-start justify-center">
                   <span className="text-[10px] font-bold text-[#0066cc]">R$</span>
-                  <span className="text-xl font-bold text-[#0066cc] leading-none">0</span>
-                  <span className="text-[10px] font-bold text-[#0066cc]">54</span>
+                  <span className="text-xl font-bold text-[#0066cc] leading-none">1</span>
+                  <span className="text-[10px] font-bold text-[#0066cc]">00</span>
                 </div>
                 <div className="text-[10px] text-[#0066cc] font-semibold mt-0.5">por dia</div>
               </div>
